@@ -1,4 +1,4 @@
-package fr.ekinci.clientmanagement.user.models;
+package fr.esipe.dataaccess.user.models;
 
 import lombok.Builder;
 import lombok.Data;
@@ -16,6 +16,6 @@ public class UserDto {
 	private String id;
 	private String lastName;
 	private String firstName;
-	private String address;
 	private String phone;
+	private String address;
 }

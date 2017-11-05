@@ -1,4 +1,4 @@
-package fr.ekinci;
+package fr.esipe;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.SpringApplication;

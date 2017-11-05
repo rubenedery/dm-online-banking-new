@@ -1,4 +1,4 @@
-package fr.ekinci.clientmanagement.configuration;
+package fr.esipe.dataaccess.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;

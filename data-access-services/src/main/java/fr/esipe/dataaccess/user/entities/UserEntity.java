@@ -1,12 +1,15 @@
-package fr.ekinci.clientmanagement.user.entities;
+package fr.esipe.dataaccess.user.entities;
 
+import fr.esipe.dataaccess.account.entities.AccountEntity;
+import fr.esipe.dataaccess.account.models.AccountDto;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Data
-@Entity(name = "banking")
+@Entity(name = "users")
 public class UserEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,9 +21,12 @@ public class UserEntity {
 	@Column(name = "first_name")
 	private String firstName;
 	
+	@Column(name = "phone")
+	private String phone;
+	
 	@Column(name = "address")
 	private String address;
 	
-	@Column(name = "phone")
-	private String phone;
+	
+	
 }
