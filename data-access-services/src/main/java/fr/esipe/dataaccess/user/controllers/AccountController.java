@@ -1,9 +1,9 @@
-package fr.esipe.dataaccess.account.controllers;
+package fr.esipe.dataaccess.user.controllers;
 
 
 
-import fr.esipe.dataaccess.account.models.AccountDto;
-import fr.esipe.dataaccess.account.services.AccountService;
+import fr.esipe.dataaccess.user.models.AccountDto;
+import fr.esipe.dataaccess.user.services.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

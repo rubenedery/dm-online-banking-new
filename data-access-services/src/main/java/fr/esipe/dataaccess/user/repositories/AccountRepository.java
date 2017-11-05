@@ -1,6 +1,6 @@
-package fr.esipe.dataaccess.account.repositories;
+package fr.esipe.dataaccess.user.repositories;
 
-import fr.esipe.dataaccess.account.entities.AccountEntity;
+import fr.esipe.dataaccess.user.entities.AccountEntity;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

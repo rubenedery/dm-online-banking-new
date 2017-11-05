@@ -17,6 +17,11 @@ public class RestClientManagement {
 	 * https://howtodoinjava.com/spring/spring-restful/spring-restful-client-resttemplate-example/
 	 */
 	
+	
+	/**
+	 * The Client management can't delete an use so the methode isn't present here
+	 * He can update, create and see information about users.
+	 */
 	public static final String REST_SERVICE_URI = "http://localhost:25002/data-access/";
 	
 	public static <T> T listOne(String endPath,

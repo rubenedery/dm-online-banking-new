@@ -1,11 +1,8 @@
 package fr.esipe.dataaccess.user.entities;
 
-import fr.esipe.dataaccess.account.entities.AccountEntity;
-import fr.esipe.dataaccess.account.models.AccountDto;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.List;
 
 
 @Data

@@ -1,8 +1,9 @@
-package fr.esipe.dataaccess.account.services;
+package fr.esipe.dataaccess.user.services;
 
-import fr.esipe.dataaccess.account.entities.AccountEntity;
-import fr.esipe.dataaccess.account.models.AccountDto;
-import fr.esipe.dataaccess.account.repositories.AccountRepository;
+import fr.esipe.dataaccess.user.entities.AccountEntity;
+import fr.esipe.dataaccess.user.models.AccountDto;
+import fr.esipe.dataaccess.user.repositories.AccountRepository;
+import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,10 +24,6 @@ public class AccountService implements IAccountService{
 		this.accountRepository = accountRepository;
 	}
 	
-	/**
-	 *
-	 * @return
-	 */
 	@Override
 	public List<AccountDto> getAll() {
 		
@@ -35,13 +32,13 @@ public class AccountService implements IAccountService{
 					   .map(
 							   u -> AccountDto.builder()
 											.id(String.valueOf(u.getId()))
-											.userEntity(u.getUser())
+											.userEntity(u.getUserEntity())
 											.typeAccount(u.getTypeAccount())
 											.amount(u.getAmount())
 											.build()
 					   )
 					   .collect(Collectors.toList());
-
+		
 	}
 	
 	/**
@@ -57,12 +54,12 @@ public class AccountService implements IAccountService{
 							   AccountDto.builder()
 									   .id(String.valueOf(accountEntity.getId()))
 									   .typeAccount(accountEntity.getTypeAccount())
-									   .userEntity(accountEntity.getUser())
+									   .userEntity(accountEntity.getUserEntity())
 									   .build()
 					   )
 					   : Optional.empty();
-
-		}
+		
+	}
 	
 	@Override
 	public AccountDto create(AccountDto accountDto) {

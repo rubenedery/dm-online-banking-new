@@ -1,4 +1,4 @@
-package fr.esipe.dataaccess.account.models;
+package fr.esipe.dataaccess.user.models;
 
 import fr.esipe.dataaccess.user.entities.UserEntity;
 import lombok.Builder;

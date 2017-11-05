@@ -1,7 +1,6 @@
-package fr.esipe.dataaccess.account.entities;
+package fr.esipe.dataaccess.user.entities;
 
-import fr.esipe.dataaccess.account.models.TypeAccount;
-import fr.esipe.dataaccess.user.entities.UserEntity;
+import fr.esipe.dataaccess.user.models.TypeAccount;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -22,11 +21,12 @@ public class AccountEntity {
 	
 	@ManyToOne
 	@JoinColumn(name = "user")
-	private UserEntity user;
+	private UserEntity userEntity;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name = "typeaccount")
 	private TypeAccount typeAccount;
+	
 }
 		
 		
