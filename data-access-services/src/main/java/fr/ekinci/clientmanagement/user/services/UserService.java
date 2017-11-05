@@ -6,6 +6,7 @@ import fr.ekinci.clientmanagement.user.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -54,7 +55,6 @@ public class UserService implements IUserService {
 		UserEntity userEntity = new UserEntity();
 		userEntity.setFirstName(userDto.getFirstName());
 		userEntity.setLastName(userDto.getLastName());
-
 		UserEntity userEntity1 = userRepository.save(userEntity);
 		return UserDto.builder()
 			.id(String.valueOf(userEntity1.getId()))
@@ -65,11 +65,13 @@ public class UserService implements IUserService {
 
 	@Override
 	public void delete(String id) {
-
+		List<UserDto> u = getAll();
+		System.out.print("Taille : "+u.size());
+		userRepository.delete(Long.parseLong(id));
 	}
 
 	@Override
 	public void update(String id, UserDto userDto) {
-
+		
 	}
 }

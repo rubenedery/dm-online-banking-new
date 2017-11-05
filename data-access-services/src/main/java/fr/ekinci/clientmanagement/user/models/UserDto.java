@@ -3,7 +3,6 @@ package fr.ekinci.clientmanagement.user.models;
 import lombok.Builder;
 import lombok.Data;
 import lombok.ToString;
-
 import javax.validation.constraints.Pattern;
 
 /**
@@ -17,4 +16,6 @@ public class UserDto {
 	private String id;
 	private String lastName;
 	private String firstName;
+	private String address;
+	private String phone;
 }

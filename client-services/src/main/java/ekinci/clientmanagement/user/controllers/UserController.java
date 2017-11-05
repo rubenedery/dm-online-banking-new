@@ -1,22 +1,15 @@
-package fr.ekinci.clientmanagement.user.controllers;
+package ekinci.clientmanagement.user.controllers;
 
-import fr.ekinci.clientmanagement.user.entities.UserEntity;
-import fr.ekinci.clientmanagement.user.models.UserDto;
-// import org.springframework.data.domain.PageRequest;
-import fr.ekinci.clientmanagement.user.repositories.UserRepository;
-import fr.ekinci.clientmanagement.user.services.UserService;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import ekinci.clientmanagement.user.models.UserDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
-import javax.validation.constraints.Pattern;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-import java.util.logging.Logger;
+
+// import org.springframework.data.domain.PageRequest;
 
 /**
  * @author Gokan EKINCI
@@ -24,20 +17,11 @@ import java.util.logging.Logger;
 @RestController
 @RequestMapping(path = "/users")
 public class UserController {
-	
-	public static final org.slf4j.Logger logger = LoggerFactory.getLogger(UserController.class);
-	private final UserService userService;
-
-	@Autowired
-	public UserController(UserService userService) {
-		this.userService = userService;
-	}
 
 	@RequestMapping(path = "/{id}", method = RequestMethod.GET)
-	public ResponseEntity<UserDto> get(@PathVariable @Valid @Pattern(regexp = "[0-9]{1,}") String id) {
+	public ResponseEntity<UserDto> get(@PathVariable Long id) {
 		// TODO
-		final Optional<UserDto> dtoOpt = userService.getUserById(id);
-		//System.out.print(dtoOpt.toString());
+		final Optional<UserDto> dtoOpt = Optional.of(new UserDto());
 		return (dtoOpt.isPresent()) ?
 			new ResponseEntity<>(dtoOpt.get(), HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
@@ -67,18 +51,18 @@ public class UserController {
 
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<UserDto> create(@RequestBody UserDto user) {
-		return new ResponseEntity<>(userService.create(user), HttpStatus.OK);
+		return new ResponseEntity<>(new UserDto(), HttpStatus.OK);
 	}
 
 	@RequestMapping(path = "/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<?> update(@PathVariable String id, @RequestBody UserDto user) {
+		// TODO
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 
 	@RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<?> delete(@PathVariable String id) {
-		userService.delete(id);
-		logger.debug("Supprimé ! ");
+		// TODO
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 }

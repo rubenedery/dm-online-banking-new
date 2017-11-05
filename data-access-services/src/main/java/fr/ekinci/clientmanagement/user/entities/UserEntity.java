@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 
 @Data
-@Entity(name = "users")
+@Entity(name = "banking")
 public class UserEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,4 +17,10 @@ public class UserEntity {
 
 	@Column(name = "first_name")
 	private String firstName;
+	
+	@Column(name = "address")
+	private String address;
+	
+	@Column(name = "phone")
+	private String phone;
 }
