@@ -1,8 +1,11 @@
 package fr.esipe.dataaccess.user.entities;
 
+import fr.esipe.dataaccess.user.models.AccountDto;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Date;
+import java.util.List;
 
 
 @Data
@@ -24,6 +27,12 @@ public class UserEntity {
 	@Column(name = "address")
 	private String address;
 	
+	@Column(name="age")
+	private Date age;
+	
+	@OneToMany
+	@JoinColumn(name = "accountentity")
+	List<AccountEntity> accountEntity;
 	
 	
 }

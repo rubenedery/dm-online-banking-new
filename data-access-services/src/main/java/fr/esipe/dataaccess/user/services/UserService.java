@@ -3,6 +3,7 @@ package fr.esipe.dataaccess.user.services;
 import fr.esipe.dataaccess.user.entities.UserEntity;
 import fr.esipe.dataaccess.user.models.UserDto;
 import fr.esipe.dataaccess.user.repositories.UserRepository;
+import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,7 @@ public class UserService implements IUserService {
 	 * Initialize userRepository interface
 	 */
 	private final UserRepository userRepository;
+	DozerBeanMapper mapper = new DozerBeanMapper();
 	
 	@Autowired
 	public UserService(UserRepository userRepository) {
@@ -32,13 +34,9 @@ public class UserService implements IUserService {
 		return userRepository.findAll()
 			.stream()
 			.map(
-				u -> UserDto.builder()
-				.id(String.valueOf(u.getId()))
-				.firstName(u.getFirstName())
-				.lastName(u.getLastName())
-				.address(u.getAddress())
-				.phone(u.getPhone())
-				.build()
+					//This is automapper : Use to mapping different class to another one
+					//Website Source : http://www.baeldung.com/dozer
+					u -> mapper.map(u, UserDto.class)
 			)
 			.collect(Collectors.toList());
 	}
@@ -53,25 +51,24 @@ public class UserService implements IUserService {
 		UserEntity userEntity = userRepository.findOne(Long.parseLong(id));
 		return (userEntity != null) ?
 			Optional.of(
-				UserDto.builder()
-					.id(String.valueOf(userEntity.getId()))
-					.firstName(userEntity.getFirstName())
-					.lastName(userEntity.getLastName())
-					.address(userEntity.getAddress())
-					.phone(userEntity.getPhone())
-					.build()
+					mapper.map(userEntity, UserDto.class)
 			)
 			: Optional.empty();
 	}
 	
 	/**
 	 * This functionnality is used when you need to create one user
+	 * We need to map user entity to user dto and return user dto
 	 * @param userDto
-	 * @return
+	 * @return userDto
 	 */
 	@Override
 	public UserDto create(UserDto userDto) {
-		UserEntity userEntity = new UserEntity();
+		
+		UserEntity userEntity = userRepository.save(mapper.map(userDto,UserEntity.class));
+		return mapper.map(userEntity,UserDto.class);
+		
+		/*UserEntity userEntity = new UserEntity();
 		userEntity.setFirstName(userDto.getFirstName());
 		userEntity.setLastName(userDto.getLastName());
 		userEntity.setAddress(userDto.getAddress());
@@ -83,7 +80,8 @@ public class UserService implements IUserService {
 			.lastName(userEntity1.getLastName())
 		    .address(userEntity1.getAddress())
 		    .phone(userEntity1.getPhone())
-			.build();
+		    .accountDtoList(userEntity1.getAccountEntity())
+			.build();*/
 	}
 	
 	/**
@@ -119,6 +117,9 @@ public class UserService implements IUserService {
 		//If you want to update the adress and the phone you need to use these 2 lines.
 		userEntity.setAddress(userDto.getAddress());
 		userEntity.setPhone(userDto.getPhone());
+		
+		//Age cant change
+		userEntity.setAge(databaseUser.get().getAge());
 		
 		userRepository.save(userEntity);
 	}

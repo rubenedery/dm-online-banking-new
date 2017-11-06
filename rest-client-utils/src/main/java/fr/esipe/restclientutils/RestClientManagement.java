@@ -28,30 +28,43 @@ public class RestClientManagement {
 								long id,
 								Class<T> generic){
 		
-		final String uri = REST_SERVICE_URI + "/" + endPath + "/" +id;
+		final String url = REST_SERVICE_URI + "/" + endPath + "/" +id;
 		RestTemplate restTemplate2 = new RestTemplate();
-		T result = restTemplate2.getForObject(uri,generic);
+		T result = restTemplate2.getForObject(url,generic);
 		return result;
 	}
 	
-	
+	/**
+	 *
+	 * @param endPath
+	 * @param generic
+	 * @param object
+	 * @param <T>
+	 * @return
+	 */
 	public static <T> T create(String endPath,
 							   Class<T> generic,
 							   T object ) {
-		final String uri = REST_SERVICE_URI + "/" + endPath + "/";
+		final String url = REST_SERVICE_URI + "/" + endPath + "/";
 		RestTemplate restTemplate = new RestTemplate();
-		T resultObject = restTemplate.postForObject( uri,object,generic);
+		T resultObject = restTemplate.postForObject( url,object,generic);
 		return resultObject;
 		
 	}
 	
-	
+	/**
+	 *
+	 * @param endPath
+	 * @param object
+	 * @param id
+	 * @param <T>
+	 */
 	public static <T> void update (String endPath,
 								   T object,long id){
 		
-		final String uri = REST_SERVICE_URI + "/" + endPath + "/" + id;
+		final String url = REST_SERVICE_URI + "/" + endPath + "/" + id;
 		RestTemplate restTemplate = new RestTemplate();
-		restTemplate.put(uri,object);
+		restTemplate.put(url,object);
 		
 	}
 	

@@ -32,7 +32,7 @@ public class AccountService implements IAccountService{
 					   .map(
 							   u -> AccountDto.builder()
 											.id(String.valueOf(u.getId()))
-											.userEntity(u.getUserEntity())
+											//.userEntity(u.getUserEntity())
 											.typeAccount(u.getTypeAccount())
 											.amount(u.getAmount())
 											.build()
@@ -54,7 +54,7 @@ public class AccountService implements IAccountService{
 							   AccountDto.builder()
 									   .id(String.valueOf(accountEntity.getId()))
 									   .typeAccount(accountEntity.getTypeAccount())
-									   .userEntity(accountEntity.getUserEntity())
+									//   .userEntity(accountEntity.getUserEntity())
 									   .build()
 					   )
 					   : Optional.empty();
