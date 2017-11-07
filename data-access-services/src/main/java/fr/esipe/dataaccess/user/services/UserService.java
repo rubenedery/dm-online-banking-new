@@ -51,7 +51,7 @@ public class UserService implements IUserService {
 		UserEntity userEntity = userRepository.findOne(Long.parseLong(id));
 		return (userEntity != null) ?
 			Optional.of(
-					mapper.map(userEntity, UserDto.class)
+				mapper.map(userEntity, UserDto.class)
 			)
 			: Optional.empty();
 	}
