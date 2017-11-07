@@ -3,6 +3,7 @@ package fr.esipe.dataaccess.user.models;
 import lombok.*;
 
 import javax.validation.constraints.Pattern;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -21,6 +22,6 @@ public class UserDto {
 	private String firstName;
 	private String phone;
 	private String address;
-	private Date age;
+	private LocalDate age;
 	List<AccountDto> accountDtoList;
 }

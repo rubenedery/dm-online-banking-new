@@ -17,7 +17,7 @@ public class HistoryEntity {
 	private long id;
 	
 	@ManyToOne
-	private AccountDto accountDto;
+	private AccountEntity accountEntity;
 	
 	@Column(name = "amount")
 	private float amount;

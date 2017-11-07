@@ -30,7 +30,7 @@ public class AccountController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<AccountDto> create(@RequestBody AccountDto accountDto) {
+	public ResponseEntity<AccountDto> create(@RequestBody AccountDto accountDto) throws Exception {
 		return new ResponseEntity<>(accountService.create(accountDto), HttpStatus.OK);
 	}
 	
@@ -47,7 +47,7 @@ public class AccountController {
 	@RequestMapping(path = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<AccountDto> get(@PathVariable @Valid @Pattern(regexp = "[0-9]{1,}") String id) {
 		// TODO
-		final Optional<AccountDto> dtoOpt = accountService.getUserById(id);
+		final Optional<AccountDto> dtoOpt = accountService.getAccountById(id);
 		return (dtoOpt.isPresent()) ?
 					   new ResponseEntity<>(dtoOpt.get(), HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}

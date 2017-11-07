@@ -12,9 +12,9 @@ public interface IAccountService {
 	
 	List<AccountDto> getAll();
 	
-	Optional<AccountDto> getUserById(String id);
+	Optional<AccountDto> getAccountById(String id);
 	
-	AccountDto create(AccountDto accountDto);
+	AccountDto create(AccountDto accountDto) throws Exception;
 	
 	void delete(String id);
 	

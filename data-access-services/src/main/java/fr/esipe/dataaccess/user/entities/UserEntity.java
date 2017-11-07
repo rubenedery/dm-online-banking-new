@@ -4,6 +4,7 @@ import fr.esipe.dataaccess.user.models.AccountDto;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -28,7 +29,7 @@ public class UserEntity {
 	private String address;
 	
 	@Column(name="age")
-	private Date age;
+	private LocalDate age;
 	
 	@OneToMany
 	@JoinColumn(name = "accountentity")
