@@ -14,6 +14,16 @@ __There are 6 modules in this project.
  
 * rest-client-utils
  
+ 
+ 
+__Diagram:__ 
+![alt text](https://github.com/rubenedery/dm-online-banking-new/blob/master/diagram/diagram1.png) 
+ ![alt text](https://github.com/rubenedery/dm-online-banking-new/blob/master/diagram/diagram2.png) 
+
+
+ 
+ 
+ 
 if you want to use the app and run it, you can use instructions 
 
 __Step 1:__
@@ -52,7 +62,3 @@ POST : http://localhost:25002/data-access/users (Insert Json)
 PUT : http://localhost:25002/data-access/users/2 (Insert Json)
 …
  
-__Component diagram:__ 
-![alt tag]() 
- 
-cid:image002.gif@01D341CF.B161F8E0
