@@ -44,25 +44,35 @@ public class AccountServiceTest {
 		 accountEntityList.add(accountEntity);
 	}
 	
-	
+	/**
+	 * Test get all account
+	 */
 	@Test public void getAllTest(){
 		Mockito.when(accountRepository.findAll()).thenReturn(accountEntityList);
 		List<AccountDto> l = accountService.getAll();
 		Assert.assertTrue(l.get(0).getId().equals("1"));
 	}
-	
+	/**
+	 * Test get all account
+	 */
 	@Test public void getAllTestWrong(){
 		Mockito.when(accountRepository.findAll()).thenReturn(accountEntityList);
 		List<AccountDto> l = accountService.getAll();
 		Assert.assertFalse(l.get(0).getId().equals("144"));
 	}
 	
+	/**
+	 * Test get account by id account
+	 */
 	@Test public void getAccountByIdTestWrong(){
 		Mockito.when(accountRepository.findOne(Mockito.anyLong())).thenReturn(accountEntity);
 		Optional<AccountDto> o = accountService.getAccountById("1");
 		Assert.assertFalse(o.get().getTypeAccount().equals(TypeAccount.LDD));
 	}
 	
+	/**
+	 * Test get account by id account
+	 */
 	@Test public void getAccountByIdTest(){
 		Mockito.when(accountRepository.findOne(Mockito.anyLong())).thenReturn(accountEntity);
 		Optional<AccountDto> o = accountService.getAccountById("1");

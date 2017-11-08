@@ -17,7 +17,7 @@ import javax.validation.constraints.Pattern;
 public class UserController {
 	
 	/**
-	 *
+	 * Get a client
 	 * @param id
 	 * @return
 	 */

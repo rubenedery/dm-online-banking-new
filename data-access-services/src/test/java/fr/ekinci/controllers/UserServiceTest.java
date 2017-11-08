@@ -55,7 +55,9 @@ public class UserServiceTest {
 		listuserentity.add(userEntity2);
 		
 	}
-	
+	/**
+	 * Test get all users
+	 */
 	@Test
 	public void getAlltest(){
 		Mockito.when(userRepository.findAll()).thenReturn(listuserentity);
@@ -63,6 +65,9 @@ public class UserServiceTest {
 		Assert.assertTrue(userDtoList.get(0).getFirstName().equals("Ruben"));
 	}
 	
+	/**
+	 * Test get all users
+	 */
 	@Test
 	public void getAllTestWrong(){
 		Mockito.when(userRepository.findAll()).thenReturn(listuserentity);
@@ -70,7 +75,9 @@ public class UserServiceTest {
 		Assert.assertFalse(userDtoList.get(0).getFirstName().equals("false"));
 	}
 	
-	
+	/**
+	 * Test user by id true
+	 */
 	@Test
 	public void getUserByIdTest(){
 		Mockito.when(userRepository.findOne(Mockito.anyLong())).thenReturn(userEntity);
@@ -78,12 +85,19 @@ public class UserServiceTest {
 		Assert.assertTrue(userDto.get().getPhone().equals("0987654321"));
 	}
 	
+	/**
+	 * Test user by id false
+	 */
 	@Test
 	public void getUserByIdTestWrong(){
 		Mockito.when(userRepository.findOne(Mockito.anyLong())).thenReturn(userEntity);
 		Optional<UserDto> userDto = userService.getUserById("1");
 		Assert.assertFalse(userDto.get().getPhone().equals("094321"));
 	}
+	
+	
+	
+	
 	
 	
 }
