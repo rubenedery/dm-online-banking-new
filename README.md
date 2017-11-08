@@ -18,6 +18,7 @@ __There are 6 modules in this project.
  
 __Diagram:__ 
 * ![alt text](https://github.com/rubenedery/dm-online-banking-new/blob/master/diagram/diagram1.png) 
+>
 __Diagram:__ 
 * ![alt text](https://github.com/rubenedery/dm-online-banking-new/blob/master/diagram/diagram2.png) 
 
