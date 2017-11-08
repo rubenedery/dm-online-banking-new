@@ -1,10 +1,9 @@
-package fr.esipe.dataaccess.user.models;
+package models;
 
 import lombok.*;
 
 import javax.validation.constraints.Pattern;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 /**

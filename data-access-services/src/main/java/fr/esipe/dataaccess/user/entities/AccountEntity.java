@@ -1,7 +1,7 @@
 package fr.esipe.dataaccess.user.entities;
 
-import fr.esipe.dataaccess.user.models.TypeAccount;
 import lombok.Data;
+import models.TypeAccount;
 
 import javax.persistence.*;
 

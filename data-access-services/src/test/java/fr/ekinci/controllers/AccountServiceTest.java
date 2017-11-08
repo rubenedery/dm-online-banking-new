@@ -1,8 +1,8 @@
 package fr.ekinci.controllers;
 
 import fr.esipe.dataaccess.user.entities.AccountEntity;
-import fr.esipe.dataaccess.user.models.AccountDto;
-import fr.esipe.dataaccess.user.models.TypeAccount;
+import models.AccountDto;
+import models.TypeAccount;
 import fr.esipe.dataaccess.user.repositories.AccountRepository;
 import fr.esipe.dataaccess.user.services.AccountService;
 import org.junit.Assert;

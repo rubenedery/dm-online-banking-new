@@ -2,8 +2,8 @@ package fr.esipe.dataaccess.user.services;
 
 import fr.esipe.dataaccess.user.entities.AccountEntity;
 import fr.esipe.dataaccess.user.entities.HistoryEntity;
-import fr.esipe.dataaccess.user.models.AccountDto;
-import fr.esipe.dataaccess.user.models.HistoryDto;
+import models.AccountDto;
+import models.HistoryDto;
 import fr.esipe.dataaccess.user.repositories.HistoryRepository;
 import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;

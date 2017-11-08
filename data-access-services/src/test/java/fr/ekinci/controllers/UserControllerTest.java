@@ -1,7 +1,6 @@
 package fr.ekinci.controllers;
 
 import fr.esipe.dataaccess.user.controllers.UserController;
-import fr.esipe.dataaccess.user.models.UserDto;
 import fr.esipe.dataaccess.user.services.UserService;
 import org.apache.catalina.filters.CorsFilter;
 import org.hamcrest.collection.IsCollectionWithSize;

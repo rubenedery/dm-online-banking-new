@@ -1,18 +1,13 @@
 package fr.esipe.dataaccess.user.services;
 
 import fr.esipe.dataaccess.user.entities.AccountEntity;
-import fr.esipe.dataaccess.user.models.AccountDto;
-import fr.esipe.dataaccess.user.models.UserDto;
 import fr.esipe.dataaccess.user.repositories.AccountRepository;
-import fr.esipe.dataaccess.user.repositories.UserRepository;
-import org.apache.tomcat.jni.Local;
+
+import models.AccountDto;
+import models.UserDto;
 import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.sql.Time;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.*;

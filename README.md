@@ -53,6 +53,6 @@ PUT : http://localhost:25002/data-access/users/2 (Insert Json)
 …
  
 __Component diagram:__ 
-![alt tag](http://imagizer.imageshack.us/a/img923/9490/GNDcDQ.png "Component diagram") 
+![alt tag]() 
  
 cid:image002.gif@01D341CF.B161F8E0

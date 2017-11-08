@@ -1,4 +1,4 @@
-package fr.esipe.dataaccess.user.models;
+package models;
 
 /**
  * @author RubenEdery on 05/11/2017.

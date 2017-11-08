@@ -1,7 +1,7 @@
 package fr.esipe.dataaccess.user.services;
 
 import fr.esipe.dataaccess.user.entities.UserEntity;
-import fr.esipe.dataaccess.user.models.UserDto;
+import models.UserDto;
 import fr.esipe.dataaccess.user.repositories.UserRepository;
 import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;

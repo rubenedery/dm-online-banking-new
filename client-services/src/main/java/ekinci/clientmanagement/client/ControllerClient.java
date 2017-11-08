@@ -1,7 +1,7 @@
 package ekinci.clientmanagement.client;
 
-import fr.esipe.dataaccess.user.models.AccountDto;
 import fr.esipe.restclientutils.RestClient;
+import models.AccountDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

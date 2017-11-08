@@ -2,7 +2,7 @@ package fr.esipe.dataaccess.user.controllers;
 
 
 
-import fr.esipe.dataaccess.user.models.AccountDto;
+import models.AccountDto;
 import fr.esipe.dataaccess.user.services.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -51,8 +51,6 @@ public class AccountController {
 		return (dtoOpt.isPresent()) ?
 					   new ResponseEntity<>(dtoOpt.get(), HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
-	
-	
 	
 	
 }

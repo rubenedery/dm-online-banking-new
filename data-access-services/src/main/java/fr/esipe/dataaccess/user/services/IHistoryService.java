@@ -1,7 +1,7 @@
 package fr.esipe.dataaccess.user.services;
 
-import fr.esipe.dataaccess.user.models.AccountDto;
-import fr.esipe.dataaccess.user.models.HistoryDto;
+
+import models.HistoryDto;
 
 /**
  * @author RubenEdery on 05/11/2017.

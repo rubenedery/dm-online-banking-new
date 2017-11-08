@@ -1,4 +1,4 @@
-package fr.esipe.dataaccess.user.models;
+package models;
 
 import lombok.*;
 
