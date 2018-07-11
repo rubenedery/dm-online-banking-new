@@ -7,8 +7,8 @@ pipeline {
                 echo 'Building..'
 		sh ‘ls’
 		sh ’cd data-access-services’
-		sh ’mvn clean’
-		sh ‘mvn install’
+		//sh ’mvn clean’
+		//sh ‘mvn install’
             }
         }
         stage('Test') {
